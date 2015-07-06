@@ -1,11 +1,9 @@
 require 'casino'
-require 'http_accept_language'
 
 class CASino::ApplicationController < ::ApplicationController
   include ApplicationHelper
 
   layout 'application'
-  before_filter :set_locale
 
   unless Rails.env.development?
     rescue_from ActionView::MissingTemplate, with: :missing_template
